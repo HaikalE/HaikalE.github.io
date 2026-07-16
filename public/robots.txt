@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haikale.github.io/sitemap.xml
