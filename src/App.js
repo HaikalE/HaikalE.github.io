@@ -23,6 +23,8 @@ const projects = [
       "A Chrome extension that detects TTML subtitle files, turns them into timestamped transcripts, and lets users jump back to the corresponding scene.",
     stack: ["JavaScript", "Chrome APIs", "Service Workers"],
     href: "https://github.com/HaikalE/auto-transcript-collector",
+    image: "/assets/images/project-netflix.png",
+    imageAlt: "Netflix Transcript Collector monitoring dashboard",
   },
   {
     index: "02",
@@ -32,6 +34,8 @@ const projects = [
       "An end-to-end learning project for collecting YouTube API data, scheduling transformations, storing the results, and exploring them through a dashboard.",
     stack: ["Python", "Airflow", "PostgreSQL", "Amazon S3", "Plotly Dash"],
     href: "https://github.com/HaikalE/youtube-data-engineering",
+    image: "/assets/images/project-youtube.png",
+    imageAlt: "YouTube Trending Analysis dashboard with metrics and charts",
   },
   {
     index: "03",
@@ -41,6 +45,8 @@ const projects = [
       "A React interface for importing PGN games, reviewing positions, and running client-side Stockfish analysis with move-by-move navigation.",
     stack: ["React", "Stockfish", "Chess.js", "Web Workers"],
     href: "https://github.com/HaikalE/React-Chess-Analyze",
+    image: "/assets/images/project-chess.png",
+    imageAlt: "Chess Analyzer interface with chessboard and PGN analysis panel",
   },
   {
     index: "04",
@@ -190,11 +196,16 @@ function App() {
             </div>
 
             <aside className="hero-card reveal is-visible" aria-label="Quick profile">
-              <div className="portrait-wrap privacy-portrait" aria-label="Muhammad Haikal Rahman monogram">
-                <div className="monogram" aria-hidden="true">MHR</div>
-                <div className="orbit orbit-one" aria-hidden="true"></div>
-                <div className="orbit orbit-two" aria-hidden="true"></div>
-                <div className="portrait-mark" aria-hidden="true">MEDAN / ID</div>
+              <div className="portrait-wrap">
+                <img
+                  className="portrait-image"
+                  src="/assets/images/haikal-headshot-v2.jpg"
+                  alt="Muhammad Haikal Rahman wearing a dark suit and striped tie"
+                  width="1000"
+                  height="1250"
+                  fetchPriority="high"
+                />
+                <div className="portrait-mark" aria-hidden="true">MHR / MEDAN</div>
               </div>
               <div className="status-card">
                 <div className="status-dot" aria-hidden="true"></div>
@@ -276,12 +287,37 @@ function App() {
             number="03"
             eyebrow="Selected work"
             title="Projects that show how I learn and build."
-            copy="A focused selection—not every repository. Each project represents a different part of my technical range."
+            copy="A focused selection with real product views—not every repository. Each project represents a different part of my technical range."
           />
 
-          <div className="project-list">
-            {projects.map((project) => (
-              <a className="project-row reveal" href={project.href} target="_blank" rel="noreferrer" key={project.title}>
+          <div className="project-gallery">
+            {projects.slice(0, 3).map((project) => (
+              <a className="project-card reveal" href={project.href} target="_blank" rel="noreferrer" key={project.title}>
+                <div className="project-visual">
+                  <img src={project.image} alt={project.imageAlt} loading="lazy" />
+                  <span className="project-index">{project.index}</span>
+                </div>
+                <div className="project-card-body">
+                  <div className="project-heading">
+                    <div>
+                      <p>{project.type}</p>
+                      <h3>{project.title}</h3>
+                    </div>
+                    <FiArrowUpRight className="project-arrow" aria-hidden="true" />
+                  </div>
+                  <span className="project-description">{project.description}</span>
+                  <div className="project-stack">
+                    {project.stack.map((item) => <span key={item}>{item}</span>)}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="additional-work reveal">
+            <p className="additional-label">More builds</p>
+            {projects.slice(3).map((project) => (
+              <a className="project-row" href={project.href} target="_blank" rel="noreferrer" key={project.title}>
                 <div className="project-index">{project.index}</div>
                 <div className="project-main">
                   <p>{project.type}</p>
