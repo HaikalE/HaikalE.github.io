@@ -50,6 +50,24 @@ const projects = [
   },
   {
     index: "04",
+    title: "SOC Home Lab — Detection Engineering & Incident Investigation",
+    type: "Blue-team / SIEM portfolio",
+    description:
+      "An isolated Windows and Splunk lab with three validated detections and three documented incident investigations using Windows Security, PowerShell, and Sysmon telemetry.",
+    stack: ["Splunk", "Sysmon", "Windows Event Logs", "MITRE ATT&CK"],
+    href: "https://github.com/HaikalE/soc-home-lab",
+  },
+  {
+    index: "05",
+    title: "Secure Messaging Prototype",
+    type: "Academic security project",
+    description:
+      "An Android and Node.js prototype used to study message encryption with AES-256 and RSA CRT, later developed into an IEEE conference paper.",
+    stack: ["Kotlin", "Node.js", "AES-256", "RSA CRT"],
+    href: "https://github.com/HaikalE/RSA-AES-CHAT-APPLICATION-ANDROID",
+  },
+  {
+    index: "06",
     title: "Kanban Board",
     type: "Full-stack project",
     description:
@@ -57,18 +75,13 @@ const projects = [
     stack: ["React", "Node.js", "PostgreSQL", "WebSockets"],
     href: "https://github.com/HaikalE/Kanban-Board-Frontend",
   },
-  {
-    index: "05",
-    title: "Secure Messaging Prototype",
-    type: "Academic software project",
-    description:
-      "An Android and Node.js prototype used to study message encryption with AES-256 and RSA CRT, later developed into an IEEE conference paper.",
-    stack: ["Kotlin", "Node.js", "AES-256", "RSA CRT"],
-    href: "https://github.com/HaikalE/RSA-AES-CHAT-APPLICATION-ANDROID",
-  },
 ];
 
 const skillGroups = [
+  {
+    label: "Security operations",
+    items: ["Splunk", "Sysmon", "Windows Event Logs", "PowerShell Logging", "MITRE ATT&CK"],
+  },
   {
     label: "Programming",
     items: ["Python", "JavaScript", "SQL", "Java", "Kotlin"],
@@ -78,12 +91,8 @@ const skillGroups = [
     items: ["Pandas", "Power BI", "Airflow", "PostgreSQL", "MySQL", "Excel"],
   },
   {
-    label: "Software development",
-    items: ["React", "Node.js", "REST APIs", "WebSockets", "Git", "Docker"],
-  },
-  {
-    label: "Research interests",
-    items: ["Applied cryptography", "Software security", "Technical writing"],
+    label: "Engineering tools",
+    items: ["VMware", "Git", "Docker", "Node.js", "REST APIs", "Amazon S3"],
   },
 ];
 
@@ -171,20 +180,20 @@ function App() {
         <section className="hero" id="top">
           <div className="hero-grid">
             <div className="hero-copy reveal is-visible">
-              <p className="eyebrow"><span></span> Medan, Indonesia · Open to early-career roles</p>
+              <p className="eyebrow"><span></span> Medan, Indonesia · Open to early-career cybersecurity roles</p>
               <h1>
-                I build across <em>software, data,</em> and applied research.
+                I investigate <em>security telemetry</em> and build systems that explain themselves.
               </h1>
               <p className="hero-lead">
-                I’m Muhammad Haikal Rahman, a Computer Science graduate and current Master’s student in Informatics. I’m an early-career generalist who learns by building, testing, and documenting working projects.
+                I’m Muhammad Haikal Rahman, a Computer Science graduate and current Master’s student in Informatics at ITB. I’m building practical blue-team depth through a Windows SOC home lab while bringing a broader foundation in software, data, automation, and technical research.
               </p>
 
               <div className="hero-actions">
-                <a className="button button-primary" href="#work">
-                  Explore selected work <FiArrowDown aria-hidden="true" />
+                <a className="button button-primary" href="https://github.com/HaikalE/soc-home-lab" target="_blank" rel="noreferrer">
+                  Explore SOC home lab <FiArrowUpRight aria-hidden="true" />
                 </a>
-                <a className="text-link" href="/resume.pdf" target="_blank" rel="noreferrer">
-                  <FiDownload aria-hidden="true" /> Download résumé
+                <a className="text-link" href="#work">
+                  View selected work <FiArrowDown aria-hidden="true" />
                 </a>
               </div>
 
@@ -212,7 +221,7 @@ function App() {
                 <div>
                   <span>Currently</span>
                   <strong>Master’s student at ITB</strong>
-                  <small>Informatics · since Aug 2025</small>
+                  <small>Informatics · cybersecurity focus · since Aug 2025</small>
                 </div>
               </div>
             </aside>
@@ -221,8 +230,8 @@ function App() {
           <div className="signal-strip reveal is-visible" aria-label="Profile highlights">
             <div><strong>3.88</strong><span>Bachelor’s GPA / 4.00</span></div>
             <div><strong>5 mo.</strong><span>Telkomsel internship</span></div>
-            <div><strong>1</strong><span>IEEE conference paper</span></div>
-            <div><strong>2</strong><span>Registered copyrights</span></div>
+            <div><strong>3</strong><span>SOC detections validated</span></div>
+            <div><strong>3</strong><span>Incident reports completed</span></div>
           </div>
         </section>
 
@@ -230,20 +239,20 @@ function App() {
           <SectionIntro
             number="01"
             eyebrow="About"
-            title="A broad foundation, presented without inflated labels."
-            copy="My work spans software development, small data workflows, and academic security projects. The common thread is practical problem solving: understand the need, build a usable version, and explain the decisions clearly."
+            title="Security operations depth built on a broad technical base."
+            copy="My current focus is defensive security: collecting endpoint telemetry, writing detections, investigating evidence across sources, and documenting why an alert should or should not escalate. Software, data, and research experience give me additional context for how systems are built and how operational evidence should be communicated."
           />
 
           <div className="about-grid">
             <div className="about-statement reveal">
               <p>
-                I don’t position myself as a specialist yet. I’m building depth through graduate study and real projects while staying open to roles where a broad technical base, curiosity, and reliable execution matter.
+                I’m targeting early-career SOC and security operations roles. My portfolio is deliberately evidence-driven: the SOC lab shows the telemetry, SPL logic, process lineage, incident timelines, false-positive reasoning, and final reports behind each conclusion rather than presenting unverified claims.
               </p>
             </div>
             <div className="principles reveal">
-              <div><FiCheck /><span><strong>Evidence over adjectives.</strong> Show the code, paper, or outcome.</span></div>
-              <div><FiCheck /><span><strong>Clarity over complexity.</strong> Make technical work understandable.</span></div>
-              <div><FiCheck /><span><strong>Progress over posturing.</strong> Be honest about what is learned and what comes next.</span></div>
+              <div><FiCheck /><span><strong>Evidence over adjectives.</strong> Show telemetry, code, reports, and outcomes.</span></div>
+              <div><FiCheck /><span><strong>Correlation over single signals.</strong> Validate conclusions across data sources.</span></div>
+              <div><FiCheck /><span><strong>Progress over posturing.</strong> Be explicit about lab scope and what comes next.</span></div>
             </div>
           </div>
         </section>
@@ -252,7 +261,7 @@ function App() {
           <SectionIntro
             number="02"
             eyebrow="Experience"
-            title="Learning through classrooms, teams, and production context."
+            title="Learning through classrooms, teams, and operational context."
           />
 
           <div className="timeline">
@@ -286,8 +295,8 @@ function App() {
           <SectionIntro
             number="03"
             eyebrow="Selected work"
-            title="Projects that show how I learn and build."
-            copy="A focused selection with real product views—not every repository. Each project represents a different part of my technical range."
+            title="Projects that show how I investigate, learn, and build."
+            copy="The SOC home lab is my current cybersecurity portfolio centerpiece. The remaining projects show the software, data, and applied-security foundation I bring into defensive security work."
           />
 
           <div className="project-gallery">
@@ -315,7 +324,7 @@ function App() {
           </div>
 
           <div className="additional-work reveal">
-            <p className="additional-label">More builds</p>
+            <p className="additional-label">Security & additional builds</p>
             {projects.slice(3).map((project) => (
               <a className="project-row" href={project.href} target="_blank" rel="noreferrer" key={project.title}>
                 <div className="project-index">{project.index}</div>
@@ -343,8 +352,8 @@ function App() {
         <section className="section section-light" id="research">
           <SectionIntro
             number="04"
-            eyebrow="Research & recognition"
-            title="Academic work grounded in implementation."
+            eyebrow="Credentials, research & recognition"
+            title="Practical training backed by academic implementation."
           />
 
           <div className="research-grid">
@@ -357,14 +366,19 @@ function App() {
 
             <div className="credential-stack">
               <article className="credential reveal">
-                <span>Registered copyrights</span>
-                <strong>Somsuk-RSA application</strong>
-                <small>EC00202510303</small>
+                <span>Security certification</span>
+                <strong>ISC2 Certified in Cybersecurity (CC)</strong>
+                <small>ISC2</small>
+              </article>
+              <article className="credential reveal">
+                <span>Practical blue-team training</span>
+                <strong>Blue Team Junior Analyst Training Pathway</strong>
+                <small>Centri · completed Aug 10, 2026</small>
               </article>
               <article className="credential reveal">
                 <span>Registered copyrights</span>
-                <strong>Phony-RSA application</strong>
-                <small>EC002025039293 · 000879554</small>
+                <strong>Somsuk-RSA & Phony-RSA applications</strong>
+                <small>Republic of Indonesia · 2025</small>
               </article>
               <article className="credential reveal">
                 <span>National program</span>
@@ -379,7 +393,7 @@ function App() {
           <SectionIntro
             number="05"
             eyebrow="Toolkit"
-            title="Tools I’ve used in coursework, internships, and projects."
+            title="Tools I’ve used in labs, coursework, internships, and projects."
             copy="These are working tools—not proficiency scores. The project links above show the context in which I used them."
           />
 
@@ -394,7 +408,7 @@ function App() {
         </section>
 
         <section className="section section-paper" id="education">
-          <SectionIntro number="06" eyebrow="Education" title="A local foundation with international exposure." />
+          <SectionIntro number="06" eyebrow="Education" title="A computer science foundation with graduate security focus." />
 
           <div className="education-grid">
             <article className="education-card education-featured reveal">
@@ -421,15 +435,15 @@ function App() {
         <section className="contact-section" id="contact">
           <div className="contact-copy reveal">
             <p className="eyebrow"><span></span> Let’s connect</p>
-            <h2>Looking for an adaptable early-career technologist?</h2>
-            <p>I’m open to software, IT, data, product-technical, and technology graduate roles where I can contribute while continuing to grow.</p>
+            <h2>Looking for an evidence-driven early-career security analyst?</h2>
+            <p>I’m open to SOC Analyst, Security Operations, managed security, junior security engineering, and related graduate roles where I can contribute while continuing to build depth.</p>
           </div>
           <div className="contact-actions reveal">
             <a className="button button-light" href="https://linkedin.com/in/muhammad-haikal-rahman" target="_blank" rel="noreferrer">
               <FiLinkedin /> Message on LinkedIn
             </a>
             <div>
-              <a href="https://linkedin.com/in/muhammad-haikal-rahman" target="_blank" rel="noreferrer">LinkedIn <FiArrowUpRight /></a>
+              <a href="https://github.com/HaikalE/soc-home-lab" target="_blank" rel="noreferrer">SOC Home Lab <FiArrowUpRight /></a>
               <a href="https://github.com/HaikalE" target="_blank" rel="noreferrer">GitHub <FiArrowUpRight /></a>
               <span><FiMapPin /> Medan, Indonesia</span>
             </div>
@@ -439,7 +453,7 @@ function App() {
 
       <footer>
         <a className="wordmark" href="#top">MHR<span>.</span></a>
-        <p>Built with React and a preference for honest, useful work.</p>
+        <p>Built with React and a preference for evidence-driven, useful work.</p>
         <span>© {new Date().getFullYear()} Muhammad Haikal Rahman</span>
       </footer>
     </div>
